@@ -30,7 +30,7 @@ update() {
         u_fck=$(cksum "${u_ts}_$u_f.txt" | cut -d' ' -f1)
         
         ( cat "$db"; printf "%s %s %s %s\n" "$u_ck" "$u_ts" "$u_fck") |
-            sort -k 3,3 -k 2,2 > "$db.tmp"
+            sort -k 3,3 -k 4,4 > "$db.tmp"
         mv "$db.tmp" "$db"
     done
 }
